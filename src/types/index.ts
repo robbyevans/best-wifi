@@ -10,3 +10,9 @@ export interface LoginCredentials {
   username: string;
   password: string;
 }
+
+export interface PaymentData {
+  phoneNumber: string;
+  amount: string;
+  packageName: string;
+}

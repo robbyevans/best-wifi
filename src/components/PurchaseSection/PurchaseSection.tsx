@@ -1,5 +1,7 @@
+import { useState } from "react";
 import type { Package } from "../../types";
 import * as S from "./styles";
+import PayModal from "../PayModal/PayModal";
 
 const PurchaseSection = () => {
   const packages: Package[] = [
@@ -61,120 +63,142 @@ const PurchaseSection = () => {
     },
   ];
 
+  const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handlePackageSelect = (pkg: Package) => {
-    console.log("Selected package:", pkg);
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPackage(null);
+  };
+
+  const handlePaymentSuccess = () => {
+    // Handle successful payment
+    console.log("Payment successful for package:", selectedPackage);
+    // You can show a success message or redirect user
+    alert(
+      `Payment successful! You can now enjoy your ${selectedPackage?.duration} package.`
+    );
   };
 
   return (
-    <S.PurchaseContainer>
-      <S.SectionHeader>
-        <S.WifiIcon>📶</S.WifiIcon>
-        <S.SectionTitle>INTERNET PACKAGES</S.SectionTitle>
-        <S.PromoBadge>🔥 HOT DEALS</S.PromoBadge>
-      </S.SectionHeader>
+    <>
+      <S.PurchaseContainer>
+        <S.SectionHeader>
+          <S.WifiIcon>📶</S.WifiIcon>
+          <S.SectionTitle>INTERNET PACKAGES</S.SectionTitle>
+          <S.PromoBadge>🔥 HOT DEALS</S.PromoBadge>
+        </S.SectionHeader>
 
-      <S.MobileInstructions>
-        <S.InstructionHeader>
-          <S.InstructionIcon>🎯</S.InstructionIcon>
-          <h4>How To Get Connected:</h4>
-        </S.InstructionHeader>
-        <S.MobileInstructionList>
-          <S.MobileInstructionItem>
-            <S.MobileStepNumber>1.</S.MobileStepNumber>
-            Tap on your preferred package below
-          </S.MobileInstructionItem>
-          <S.MobileInstructionItem>
-            <S.MobileStepNumber>2.</S.MobileStepNumber>
-            Enter your phone number when prompted
-          </S.MobileInstructionItem>
-          <S.MobileInstructionItem>
-            <S.MobileStepNumber>3.</S.MobileStepNumber>
-            Click "PAY NOW" to proceed with M-Pesa
-          </S.MobileInstructionItem>
-          <S.MobileInstructionItem>
-            <S.MobileStepNumber>4.</S.MobileStepNumber>
-            Enter your M-Pesa PIN and wait for confirmation
-          </S.MobileInstructionItem>
-        </S.MobileInstructionList>
-      </S.MobileInstructions>
+        <S.MobileInstructions>
+          <S.InstructionHeader>
+            <S.InstructionIcon>🎯</S.InstructionIcon>
+            <h4>How To Get Connected:</h4>
+          </S.InstructionHeader>
+          <S.MobileInstructionList>
+            <S.MobileInstructionItem>
+              <S.MobileStepNumber>1.</S.MobileStepNumber>
+              Tap on your preferred package below
+            </S.MobileInstructionItem>
+            <S.MobileInstructionItem>
+              <S.MobileStepNumber>2.</S.MobileStepNumber>
+              Enter your phone number when prompted
+            </S.MobileInstructionItem>
+            <S.MobileInstructionItem>
+              <S.MobileStepNumber>3.</S.MobileStepNumber>
+              Click "PAY NOW" to proceed with M-Pesa
+            </S.MobileInstructionItem>
+            <S.MobileInstructionItem>
+              <S.MobileStepNumber>4.</S.MobileStepNumber>
+              Enter your M-Pesa PIN and wait for confirmation
+            </S.MobileInstructionItem>
+          </S.MobileInstructionList>
+        </S.MobileInstructions>
 
-      <S.DesktopInstructions>
-        <S.InstructionHeader>
-          <S.InstructionIcon>🎯</S.InstructionIcon>
-          <h4>How To Get Connected:</h4>
-        </S.InstructionHeader>
-        <S.InstructionList>
-          <S.InstructionItem>
-            <S.StepNumber>1</S.StepNumber>
-            Tap on your preferred package below
-          </S.InstructionItem>
-          <S.InstructionItem>
-            <S.StepNumber>2</S.StepNumber>
-            Enter your phone number when prompted
-          </S.InstructionItem>
-          <S.InstructionItem>
-            <S.StepNumber>3</S.StepNumber>
-            Click "PAY NOW" to proceed with M-Pesa
-          </S.InstructionItem>
-          <S.InstructionItem>
-            <S.StepNumber>4</S.StepNumber>
-            Enter your M-Pesa PIN and wait for confirmation
-          </S.InstructionItem>
-        </S.InstructionList>
-      </S.DesktopInstructions>
+        <S.DesktopInstructions>
+          <S.InstructionHeader>
+            <S.InstructionIcon>🎯</S.InstructionIcon>
+            <h4>How To Get Connected:</h4>
+          </S.InstructionHeader>
+          <S.InstructionList>
+            <S.InstructionItem>
+              <S.StepNumber>1</S.StepNumber>
+              Tap on your preferred package below
+            </S.InstructionItem>
+            <S.InstructionItem>
+              <S.StepNumber>2</S.StepNumber>
+              Enter your phone number when prompted
+            </S.InstructionItem>
+            <S.InstructionItem>
+              <S.StepNumber>3</S.StepNumber>
+              Click "PAY NOW" to proceed with M-Pesa
+            </S.InstructionItem>
+            <S.InstructionItem>
+              <S.StepNumber>4</S.StepNumber>
+              Enter your M-Pesa PIN and wait for confirmation
+            </S.InstructionItem>
+          </S.InstructionList>
+        </S.DesktopInstructions>
 
-      <S.DesktopContactInfo>
-        <S.PhoneIcon>📞</S.PhoneIcon>
-        <div>
-          <strong>Need Help? Call Us: 0743 749 995</strong>
-          <span>24/7 Customer Support Available</span>
-        </div>
-      </S.DesktopContactInfo>
+        <S.DesktopContactInfo>
+          <S.PhoneIcon>📞</S.PhoneIcon>
+          <div>
+            <strong>Need Help? Call Us: 0743 749 995</strong>
+            <span>24/7 Customer Support Available</span>
+          </div>
+        </S.DesktopContactInfo>
 
-      <S.DesktopPromoSection>
-        <S.PromoTitle>🎉 LIMITED TIME OFFERS</S.PromoTitle>
-        <S.PromoGrid>
-          <S.PromoCard>
-            <S.PromoIcon>⚡</S.PromoIcon>
-            <S.PromoText>Lightning Fast 4mbps</S.PromoText>
-          </S.PromoCard>
-          <S.PromoCard>
-            <S.PromoIcon>💰</S.PromoIcon>
-            <S.PromoText>Best Value Deals</S.PromoText>
-          </S.PromoCard>
-          <S.PromoCard>
-            <S.PromoIcon>📱</S.PromoIcon>
-            <S.PromoText>Instant Activation</S.PromoText>
-          </S.PromoCard>
-        </S.PromoGrid>
-      </S.DesktopPromoSection>
+        <S.DesktopPromoSection>
+          <S.PromoTitle>🎉 LIMITED TIME OFFERS</S.PromoTitle>
+          <S.PromoGrid>
+            <S.PromoCard>
+              <S.PromoIcon>⚡</S.PromoIcon>
+              <S.PromoText>Lightning Fast 4mbps</S.PromoText>
+            </S.PromoCard>
+            <S.PromoCard>
+              <S.PromoIcon>💰</S.PromoIcon>
+              <S.PromoText>Best Value Deals</S.PromoText>
+            </S.PromoCard>
+            <S.PromoCard>
+              <S.PromoIcon>📱</S.PromoIcon>
+              <S.PromoText>Instant Activation</S.PromoText>
+            </S.PromoCard>
+          </S.PromoGrid>
+        </S.DesktopPromoSection>
 
-      <S.PackagesGrid>
-        {packages.map((pkg, index) => (
-          <S.PackageCard
-            key={index}
-            onClick={() => handlePackageSelect(pkg)}
-            $popular={pkg.popular}
-          >
-            {pkg.popular && <S.PopularBadge>POPULAR 🏆</S.PopularBadge>}
-            <S.PackageIcon>{pkg.icon}</S.PackageIcon>
-            <S.PackageDuration>{pkg.duration}</S.PackageDuration>
-            <S.PackagePrice>{pkg.price}</S.PackagePrice>
-            <S.PackageSpeed>{pkg.speed}</S.PackageSpeed>
-          </S.PackageCard>
-        ))}
-      </S.PackagesGrid>
-      <S.MobileContactInfo>
-        <S.PhoneIcon>📞</S.PhoneIcon>
-        <strong>Support: 0743 749 995</strong>
-      </S.MobileContactInfo>
-      {/* <S.GuaranteeSection>
-        <S.GuaranteeIcon>✅</S.GuaranteeIcon>
-        <S.GuaranteeText>
-          <strong>30-Minute Money Back Guarantee</strong>
-        </S.GuaranteeText>
-      </S.GuaranteeSection> */}
-    </S.PurchaseContainer>
+        <S.PackagesGrid>
+          {packages.map((pkg, index) => (
+            <S.PackageCard
+              key={index}
+              onClick={() => handlePackageSelect(pkg)}
+              $popular={pkg.popular}
+            >
+              {pkg.popular && <S.PopularBadge>POPULAR 🏆</S.PopularBadge>}
+              <S.PackageIcon>{pkg.icon}</S.PackageIcon>
+              <S.PackageDuration>{pkg.duration}</S.PackageDuration>
+              <S.PackagePrice>{pkg.price}</S.PackagePrice>
+              <S.PackageSpeed>{pkg.speed}</S.PackageSpeed>
+            </S.PackageCard>
+          ))}
+        </S.PackagesGrid>
+
+        <S.MobileContactInfo>
+          <S.PhoneIcon>📞</S.PhoneIcon>
+          <strong>Support: 0743 749 995</strong>
+        </S.MobileContactInfo>
+      </S.PurchaseContainer>
+
+      <PayModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        selectedPackage={selectedPackage}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
+    </>
   );
 };
 
