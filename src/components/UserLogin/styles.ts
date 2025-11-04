@@ -112,34 +112,34 @@ export const Input = styled.input`
   }
 `;
 
-export const Features = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
+// export const Features = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   gap: 1rem;
+//   margin-bottom: 2rem;
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-`;
+//   @media (max-width: 480px) {
+//     grid-template-columns: 1fr;
+//     gap: 0.8rem;
+//   }
+// `;
 
-export const Feature = styled.div`
-  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  color: #1e40af;
-  font-weight: 600;
-  font-size: 0.9rem;
-  border: 1px solid #bae6fd;
-`;
+// export const Feature = styled.div`
+//   background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+//   padding: 1rem;
+//   border-radius: 10px;
+//   text-align: center;
+//   color: #1e40af;
+//   font-weight: 600;
+//   font-size: 0.9rem;
+//   border: 1px solid #bae6fd;
+// `;
 
-export const FeatureIcon = styled.span`
-  display: block;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-`;
+// export const FeatureIcon = styled.span`
+//   display: block;
+//   font-size: 1.5rem;
+//   margin-bottom: 0.5rem;
+// `;
 
 export const Button = styled.button`
   width: 100%;

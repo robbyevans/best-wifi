@@ -57,7 +57,7 @@ const UserLogin = () => {
         />
       </S.InputGroup>
 
-      <S.Features>
+      {/* <S.Features>
         <S.Feature>
           <S.FeatureIcon>⚡</S.FeatureIcon>
           High-speed browsing
@@ -70,7 +70,7 @@ const UserLogin = () => {
           <S.FeatureIcon>📺</S.FeatureIcon>
           Streaming ready
         </S.Feature>
-      </S.Features>
+      </S.Features> */}
 
       <S.Button onClick={handleLogin}>
         <S.ButtonIcon>🚀</S.ButtonIcon>
