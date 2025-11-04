@@ -74,10 +74,28 @@ const PurchaseSection = () => {
       </S.SectionHeader>
 
       <S.MobileInstructions>
-        <S.MobileInstructionText>
+        <S.InstructionHeader>
           <S.InstructionIcon>🎯</S.InstructionIcon>
-          Tap any package below to get started
-        </S.MobileInstructionText>
+          <h4>How To Get Connected:</h4>
+        </S.InstructionHeader>
+        <S.MobileInstructionList>
+          <S.MobileInstructionItem>
+            <S.MobileStepNumber>1.</S.MobileStepNumber>
+            Tap on your preferred package below
+          </S.MobileInstructionItem>
+          <S.MobileInstructionItem>
+            <S.MobileStepNumber>2.</S.MobileStepNumber>
+            Enter your phone number when prompted
+          </S.MobileInstructionItem>
+          <S.MobileInstructionItem>
+            <S.MobileStepNumber>3.</S.MobileStepNumber>
+            Click "PAY NOW" to proceed with M-Pesa
+          </S.MobileInstructionItem>
+          <S.MobileInstructionItem>
+            <S.MobileStepNumber>4.</S.MobileStepNumber>
+            Enter your M-Pesa PIN and wait for confirmation
+          </S.MobileInstructionItem>
+        </S.MobileInstructionList>
       </S.MobileInstructions>
 
       <S.DesktopInstructions>
@@ -113,11 +131,6 @@ const PurchaseSection = () => {
         </div>
       </S.DesktopContactInfo>
 
-      <S.MobileContactInfo>
-        <S.PhoneIcon>📞</S.PhoneIcon>
-        <strong>Support: 0743 749 995</strong>
-      </S.MobileContactInfo>
-
       <S.DesktopPromoSection>
         <S.PromoTitle>🎉 LIMITED TIME OFFERS</S.PromoTitle>
         <S.PromoGrid>
@@ -151,13 +164,16 @@ const PurchaseSection = () => {
           </S.PackageCard>
         ))}
       </S.PackagesGrid>
-
-      <S.GuaranteeSection>
+      <S.MobileContactInfo>
+        <S.PhoneIcon>📞</S.PhoneIcon>
+        <strong>Support: 0743 749 995</strong>
+      </S.MobileContactInfo>
+      {/* <S.GuaranteeSection>
         <S.GuaranteeIcon>✅</S.GuaranteeIcon>
         <S.GuaranteeText>
           <strong>30-Minute Money Back Guarantee</strong>
         </S.GuaranteeText>
-      </S.GuaranteeSection>
+      </S.GuaranteeSection> */}
     </S.PurchaseContainer>
   );
 };

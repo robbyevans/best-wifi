@@ -68,10 +68,11 @@ export const PromoBadge = styled.div`
   }
 `;
 
-// Mobile-only simplified instructions
+// Mobile instructions with compact steps
+// Mobile instructions with compact list
 export const MobileInstructions = styled.div`
   background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-  padding: 0.8rem 1rem;
+  padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
   border-left: 4px solid #10b981;
@@ -82,13 +83,65 @@ export const MobileInstructions = styled.div`
   }
 `;
 
-export const MobileInstructionText = styled.div`
+export const InstructionHeader = styled.div`
   display: flex;
   align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+
+  h4 {
+    color: #1a202c;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+
+    h4 {
+      font-size: 0.9rem;
+    }
+  }
+`;
+
+export const InstructionIcon = styled.div`
+  font-size: 1.3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+`;
+
+// Mobile instruction list
+export const MobileInstructionList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+export const MobileInstructionItem = styled.li`
+  display: flex;
+  align-items: flex-start;
   gap: 0.5rem;
+  margin-bottom: 0.5rem;
   color: #4a5568;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.3;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const MobileStepNumber = styled.span`
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  min-width: 1.2rem;
 `;
 
 // Desktop instructions (hidden on mobile)
@@ -101,28 +154,6 @@ export const DesktopInstructions = styled.div`
 
   @media (max-width: 768px) {
     display: none;
-  }
-`;
-
-export const InstructionHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-
-  h4 {
-    color: #1a202c;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-  }
-`;
-
-export const InstructionIcon = styled.div`
-  font-size: 1.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
   }
 `;
 
@@ -408,45 +439,45 @@ export const PackageSpeed = styled.div`
   }
 `;
 
-export const GuaranteeSection = styled.div`
-  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-  padding: 1rem;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  border: 1px solid #10b981;
+// export const GuaranteeSection = styled.div`
+//   background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+//   padding: 1rem;
+//   border-radius: 10px;
+//   display: flex;
+//   align-items: center;
+//   gap: 0.8rem;
+//   border: 1px solid #10b981;
 
-  @media (max-width: 768px) {
-    padding: 0.8rem;
-    gap: 0.6rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     padding: 0.8rem;
+//     gap: 0.6rem;
+//   }
+// `;
 
-export const GuaranteeIcon = styled.div`
-  font-size: 1.5rem;
-  flex-shrink: 0;
+// export const GuaranteeIcon = styled.div`
+//   font-size: 1.5rem;
+//   flex-shrink: 0;
 
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
+//   @media (max-width: 768px) {
+//     font-size: 1.2rem;
+//   }
+// `;
 
-export const GuaranteeText = styled.div`
-  color: #065f46;
-  font-size: 0.9rem;
-  line-height: 1.3;
+// export const GuaranteeText = styled.div`
+//   color: #065f46;
+//   font-size: 0.9rem;
+//   line-height: 1.3;
 
-  strong {
-    display: block;
-    font-size: 0.9rem;
-  }
+//   strong {
+//     display: block;
+//     font-size: 0.9rem;
+//   }
 
-  @media (max-width: 768px) {
-    font-size: 0.8rem;
+//   @media (max-width: 768px) {
+//     font-size: 0.8rem;
 
-    strong {
-      font-size: 0.8rem;
-    }
-  }
-`;
+//     strong {
+//       font-size: 0.8rem;
+//     }
+//   }
+// `;
