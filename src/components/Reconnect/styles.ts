@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const LoginContainer = styled.section`
+export const ReconnectContainer = styled.section`
   background: rgba(255, 255, 255, 0.95);
   margin: 1rem auto;
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  max-width: 500px;
+  max-width: 1000px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 

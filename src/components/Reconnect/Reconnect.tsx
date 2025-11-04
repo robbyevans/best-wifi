@@ -10,7 +10,7 @@ const Reconnect = () => {
   };
 
   return (
-    <S.LoginContainer>
+    <S.ReconnectContainer>
       <S.SectionHeader>
         <S.SyncIcon>🔄</S.SyncIcon>
         <S.SectionTitle>Reconnect Your Account</S.SectionTitle>
@@ -65,7 +65,7 @@ const Reconnect = () => {
           confirmation message
         </S.HelpText>
       </S.HelpSection>
-    </S.LoginContainer>
+    </S.ReconnectContainer>
   );
 };
 
