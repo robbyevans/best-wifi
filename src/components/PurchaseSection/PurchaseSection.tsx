@@ -69,11 +69,18 @@ const PurchaseSection = () => {
     <S.PurchaseContainer>
       <S.SectionHeader>
         <S.WifiIcon>📶</S.WifiIcon>
-        <S.SectionTitle>HIGH-SPEED INTERNET PACKAGES</S.SectionTitle>
+        <S.SectionTitle>INTERNET PACKAGES</S.SectionTitle>
         <S.PromoBadge>🔥 HOT DEALS</S.PromoBadge>
       </S.SectionHeader>
 
-      <S.Instructions>
+      <S.MobileInstructions>
+        <S.MobileInstructionText>
+          <S.InstructionIcon>🎯</S.InstructionIcon>
+          Tap any package below to get started
+        </S.MobileInstructionText>
+      </S.MobileInstructions>
+
+      <S.DesktopInstructions>
         <S.InstructionHeader>
           <S.InstructionIcon>🎯</S.InstructionIcon>
           <h4>How To Get Connected:</h4>
@@ -96,17 +103,22 @@ const PurchaseSection = () => {
             Enter your M-Pesa PIN and wait for confirmation
           </S.InstructionItem>
         </S.InstructionList>
-      </S.Instructions>
+      </S.DesktopInstructions>
 
-      <S.ContactInfo>
+      <S.DesktopContactInfo>
         <S.PhoneIcon>📞</S.PhoneIcon>
         <div>
           <strong>Need Help? Call Us: 0743 749 995</strong>
           <span>24/7 Customer Support Available</span>
         </div>
-      </S.ContactInfo>
+      </S.DesktopContactInfo>
 
-      <S.PromoSection>
+      <S.MobileContactInfo>
+        <S.PhoneIcon>📞</S.PhoneIcon>
+        <strong>Support: 0743 749 995</strong>
+      </S.MobileContactInfo>
+
+      <S.DesktopPromoSection>
         <S.PromoTitle>🎉 LIMITED TIME OFFERS</S.PromoTitle>
         <S.PromoGrid>
           <S.PromoCard>
@@ -122,7 +134,7 @@ const PurchaseSection = () => {
             <S.PromoText>Instant Activation</S.PromoText>
           </S.PromoCard>
         </S.PromoGrid>
-      </S.PromoSection>
+      </S.DesktopPromoSection>
 
       <S.PackagesGrid>
         {packages.map((pkg, index) => (
@@ -131,12 +143,11 @@ const PurchaseSection = () => {
             onClick={() => handlePackageSelect(pkg)}
             $popular={pkg.popular}
           >
-            {pkg.popular && <S.PopularBadge>MOST POPULAR 🏆</S.PopularBadge>}
+            {pkg.popular && <S.PopularBadge>POPULAR 🏆</S.PopularBadge>}
             <S.PackageIcon>{pkg.icon}</S.PackageIcon>
             <S.PackageDuration>{pkg.duration}</S.PackageDuration>
             <S.PackagePrice>{pkg.price}</S.PackagePrice>
             <S.PackageSpeed>{pkg.speed}</S.PackageSpeed>
-            <S.SelectButton>SELECT PLAN</S.SelectButton>
           </S.PackageCard>
         ))}
       </S.PackagesGrid>
@@ -144,8 +155,7 @@ const PurchaseSection = () => {
       <S.GuaranteeSection>
         <S.GuaranteeIcon>✅</S.GuaranteeIcon>
         <S.GuaranteeText>
-          <strong>30-Minute Money Back Guarantee</strong> - If you're not
-          satisfied, we'll refund your purchase!
+          <strong>30-Minute Money Back Guarantee</strong>
         </S.GuaranteeText>
       </S.GuaranteeSection>
     </S.PurchaseContainer>
